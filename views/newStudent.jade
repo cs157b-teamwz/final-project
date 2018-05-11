@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1= 'Adding new student'
+    form(name='add-course', method='post')
+        div.input
+            span.label Last Name
+            input(type="text", name="lastName")
+        div.input
+            span.label First Name
+            input(type="text", name="firstName")
+        div.input
+            span.label Major
+            input(type="text", name="major")
+        div.input
+            span.label Start Date(YYYY-MM-DD)
+            input(type="text", name="startDate")
+        div.action
+            input(type="submit", value="Add")

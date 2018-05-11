@@ -1,13 +1,10 @@
 extends layout
 
 block content
-    h1= 'Administrator Login'
-    form(name='add-course', method='post')
-        div.input
-            span.label Username
-            input(type="text", name="username")
-        div.input
-            span.label Password
-            input(type="text", name="password")
-        div.action
-            input(type="submit", value="Login")
+    h1 Administrator Portal
+    ul
+        li <a href="/admin/addCourse">Add New Class</a>
+        li <a href="/admin/addStudent">Add New Student</a>
+        li <a href="/admin/addProfessor">Add New Professor</a>
+        li <a href="">Analyze Enrollment</a>
+

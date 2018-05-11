@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h3= message
+    h1= 'Enroll new course'
+    form(name='enroll-course', method='post')
+        div.input
+            span.label Course Title
+            input(type="text", name="courseTitle")
+        div.input
+            span.label Section Number
+            input(type="text", name="sectionNum")
+        div.input
+            span.label Student ID
+            input(type="text", name="professor")
+        div.action
+            input(type="submit", value="Enroll")
