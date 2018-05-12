@@ -17,3 +17,28 @@ module.exports.search = function (req, res) {
         res.render('searchCourse', {message: msg, res: rows});
     })
 }
+
+module.exports.enroll = function (req, res) {
+    const title = req.body.courseTitle;
+    const secNum = req.body.sectionNum;
+    const sId = req.body.sId;
+
+    const sqlCourse = 'SELECT * FROM CoursesDimention WHERE CourseTitle = ?';
+    const queryValuesCourse = [title, secNum];
+
+    // check if courseTitle and section num are valid
+    conn.query(sqlCourse, queryValuesCourse, function (err, courseResult) {
+        if (err) {
+          return res.render('error', {message: "Database error", error: err});
+        }
+        console.log(courseResult);
+        if (courseResult.length != 1) {
+          const msg = rows.length == 0 ? "No course found" : "Multiple courses found";
+          return res.render('enrollCourse', {message: msg});
+        }
+
+    })
+
+    // check if student id is valid
+    // insert
+}
