@@ -8,3 +8,11 @@ block content
             input(type="text", name="courseTitle")
         div.action
             input(type="submit", value="Search")
+    if res
+        h2= message
+        ul
+            each elem, index in res
+                li= index
+                    ul 
+                        each val, key in elem
+                            li #{key}: #{val}
