@@ -13,6 +13,6 @@ router.get('/enrollCourse', function (req, res, next) {
     res.render('enrollCourse');
 })
 
-router.post('/searchCourse', studentCtr.enroll);
+router.post('/enrollCourse', studentCtr.enroll);
 
 module.exports = router;

@@ -1,7 +1,6 @@
 extends layout
 
 block content
-    h3= message
     h1= 'Enroll new course'
     form(name='enroll-course', method='post')
         div.input
@@ -15,3 +14,4 @@ block content
             input(type="text", name="sId")
         div.action
             input(type="submit", value="Enroll")
+    h3= message

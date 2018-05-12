@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/admin', function(req, res, next) {
-    res.render('adminLogin');
+   res.render('adminLogin');
 });
 
 router.get('/student', function(req, res, next) {
