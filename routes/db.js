@@ -1,15 +1,14 @@
 var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "team_ez",
-    password: "sesame",
-    database: 'ez_star'
-});
 var db;
 
 function connectDatabase() {
     if (!db) {
-        db = mysql.createConnection(connection);
+        db = mysql.createConnection({
+            host: "localhost",
+            user: "team_ez",
+            password: "sesame",
+            database: 'ez_star'
+        });
 
         db.connect(function(err){
             if(!err) {
@@ -19,6 +18,11 @@ function connectDatabase() {
             }
         });
     }
+    
+    db.query('Select name from StudentDimention', function (err, rows) {
+        if (err) throw err;
+        console.log('Result: ' + rows[0]);
+    })
     return db;
 }
 
