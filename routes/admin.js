@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var conn = require("./db");
 const adminCtr = require("../controllers/adminController");
+const analyzeCtr = require("../controllers/analyzeController");
 
 router.get('/addCourse', function (req, res, next) {
     res.render('newCourse');
@@ -19,5 +19,15 @@ router.get('/addProfessor', function (req, res, next) {
 })
 
 router.post('/addProfessor', adminCtr.addProfessor);
+
+router.get('/analyzeEnrollment', adminCtr.analyze);
+
+router.get('/analyzeByCourses', analyzeCtr.byCourses);
+
+router.get('/analyzeByDepartment', analyzeCtr.byDept);
+
+router.get('/analyzeBySemester', analyzeCtr.bySemester);
+
+router.get('/analyzeByProfessor', analyzeCtr.byProf);
 
 module.exports = router;

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Analyzed #{title} Data
+        // - console.log(results)
+    div
+        table.table.table-hover(border='1')
+            thead
+                tr
+                    each val, key in results[0]
+                        - console.log(key +": "+ val);
+                        th=key
+            tbody
+                each row in results
+                    tr
+                    each val, key in row
+                        td=val
+

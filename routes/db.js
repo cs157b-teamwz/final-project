@@ -19,9 +19,9 @@ function connectDatabase() {
         });
     }
     
-    db.query('Select name from StudentDimention', function (err, rows) {
+    db.query('Select * from StudentDimention', function (err, rows) {
         if (err) throw err;
-        console.log('Result: ' + rows[0]);
+        console.log('Result: ' + rows[0].Name);
     })
     return db;
 }

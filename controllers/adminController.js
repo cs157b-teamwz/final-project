@@ -68,3 +68,8 @@ module.exports.addCourse = function (req, res) {
     return res.render('newCourse', {message: msg});
   })
 }
+
+module.exports.analyze = function (req, res) {
+    res.render('analyzeEnrollment');
+}
+
