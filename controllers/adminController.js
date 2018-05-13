@@ -21,7 +21,7 @@ module.exports.addStudent = function (req, res) {
   const startDate = req.body.startDate;
 
   const sqlInsert = 'INSERT INTO StudentDimention (StudentKey, StudentID, Name, Major, Email, StartDate) VALUE(?, ?, ?, ?, ?, ?);';
-  const insertValue = [studentID, studentID, name, email, major, startDate];
+  const insertValue = [studentID, studentID, name, major, email, startDate];
 
   conn.query(sqlInsert, insertValue, function (err, calResult) {
     if (err) {
