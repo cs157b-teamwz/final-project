@@ -2,7 +2,11 @@ extends layout
 
 block content
     h1= 'Adding new professor'
+    h2= message
     form(name='add-course', method='post')
+        div.input
+            span.label ID
+            input(type="text", name="pId")
         div.input
             span.label Name
             input(type="text", name="name")

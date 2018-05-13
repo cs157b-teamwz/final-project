@@ -4,16 +4,23 @@ block content
     h1= 'Adding new course'
     form(name='add-course', method='post')
         div.input
+            span.label Course Id
+            input(type="text", name="cId")
+        div.input
             span.label Course Title
             input(type="text", name="courseTitle")
         div.input
             span.label Section Number
             input(type="text", name="sectionNum")
         div.input
-            span.label Professor(Last, First Name)
-            input(type="text", name="professor")
+            span.label Professor ID
+            input(type="text", name="pId")
         div.input
-            span.label Office
-            input(type="text", name="office")
+            span.label Classroom ID (e.q. SCI101)
+            input(type="text", name="crId")
+        div.input
+            span.label Capacity
+            input(type="text", name="cap")
         div.action
             input(type="submit", value="Add")
+    h2= message
